@@ -1,0 +1,5 @@
+public directory is for static assets like icon, pdf, videos, bla bla
+
+app directory is for components, pages, layout, routes, middleware, app logic
+
+I build this app for e-commerce course without knowing anything about NextJS, forgive me :)
