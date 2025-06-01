@@ -1,10 +1,9 @@
 "use client";
-
 import { FormEvent, useState } from "react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
-import { app } from "../../firebase";
+import { app } from "@/firebase";
 
 export default function Login() {
     const [email, setEmail] = useState("");
