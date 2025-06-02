@@ -2,6 +2,7 @@
 import { useRouter } from "next/navigation";
 import { getAuth, signOut } from "firebase/auth";
 import { app } from "@/firebase";
+import Link from "next/link";
 
 interface HomePageProps {
     email?: string;
@@ -22,7 +23,7 @@ export default function HomePage({ email }: HomePageProps) {
         <main className="flex min-h-screen flex-col items-center justify-center p-24">
             <h1 className="text-xl mb-4">Trang chính sau khi đăng nhập thành công</h1>
             <p className="mb-8">
-                Only <strong>{email}</strong> holds the magic key to this kingdom!
+                Hello <strong>{email}</strong>!
             </p>
             <button
                 onClick={handleLogout}
@@ -30,6 +31,7 @@ export default function HomePage({ email }: HomePageProps) {
             >
                 Logout
             </button>
+            <Link href="/dashboard/admin">dashboard ne</Link>
         </main>
     );
 }
