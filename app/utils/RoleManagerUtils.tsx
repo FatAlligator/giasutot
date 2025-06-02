@@ -38,3 +38,17 @@ export const getUserRole = async (uid: string): Promise<UserRole | null> => {
         return null;
     }
 };
+
+// Hàm kiểm tra xem user có role cụ thể không
+export const checkUserRole = async (uid: string, requiredRole: UserRole): Promise<boolean> => {
+    try {
+        const userDoc = await getDoc(doc(db, "Users", uid));
+        if (userDoc.exists()) {
+            return userDoc.data().role === requiredRole;
+        }
+        return false;
+    } catch (error) {
+        console.error("Error checking user role:", error);
+        return false;
+    }
+};
